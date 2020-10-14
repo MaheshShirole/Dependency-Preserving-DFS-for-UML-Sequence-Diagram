@@ -1,0 +1,14 @@
+6# nodes # MapRendering sequence diagram NUL2.0 Nutshell
+sds#sdStart#0
+sde#sdEnd#1
+par1s#fork#3
+par1e#join#4
+m1#block1{getMapData()-addTexture(MapData)}#2#getMapData()
+m2#block2{cs1Start-getMapData()- decompressData()-queueMapData()-cs1End}#2#getMapData()
+6#edges
+sds#par1s#1
+par1s#m1#1
+par1s#m2#1
+m1#par1e#1
+m2#par1e#1
+par1e#sde#1

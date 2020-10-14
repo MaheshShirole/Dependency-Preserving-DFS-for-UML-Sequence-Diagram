@@ -1,0 +1,18 @@
+8#nodes#On-line Rail Ticket Reservation sequence diagram # Concurrent Composite Graph (CCG) Khandai-2011
+sds#InitialNode#0
+sde#FinalNode#1
+fork1#ForkNode#3
+join1#JoinNode#4
+b1#block1{FillTicketInfo()-getTicket(Source, Destination, Train, tickets, class)}#2
+b2#block2{requestPayement(TicketBill)-diasplayBankRequest()-getUserDetails()-checkBalance()-getConfirmation()-debitAccount(amount)-confirmPayment()-SS1}#2#
+b3#block3{reserveSeats(tickets,class)-lockSeats(tickets,class)-RS1-confirmSeats(tickets,class)-updateSeats()}#2
+b4#block4{dispalySeatStatus()}#2
+8#Edges
+sds#b1#1
+b1#fork1#1
+fork1#b2#1
+fork1#b3#1
+b2#join1#1
+b3#join1#1
+join1#b4#1
+b4#sde#1

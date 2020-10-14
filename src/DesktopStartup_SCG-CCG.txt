@@ -1,0 +1,14 @@
+6#nodes# Desktop Startup sequence diagram
+sds#sdStart#0
+sde#sdEnd#1
+par1s#fork1#3
+par1e#join1#4
+m1#block1{a1-a2-a3-a4}#2#showLoginSplashScreen()-loadColorPref()-sortIcon()-hideLoginSpalshScreen()
+m2#block2{b1-b2-b3-b4}#2#startFirewallService()-startSystemLoginApps()-startSystemTrayApps()-startUserLoginApps()
+6#Edges
+sds#par1s#1
+par1s#m1#1
+par1s#m2#1
+m1#par1e#1
+m2#par1e#1
+par1e#sde#1

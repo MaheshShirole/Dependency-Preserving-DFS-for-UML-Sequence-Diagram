@@ -1,0 +1,25 @@
+11# nodes # MapRendering sequence diagram NUL2.0 Nutshell
+sds#sdStart#0
+sde#sdEnd#1
+par1s#par1Start#3
+par1e#par1End#4
+cs1s#cs1Start#5
+cs1e#cs1End#6
+m1#a1#2#getMapData()
+m2#a2#2#addTexture(MapData)
+m3#b1#2#getMapData()
+m4#b2#2#decompressData()
+m5#b3#2#queueMapData()
+12#edges
+sds#par1s#1
+par1s#m1#1
+par1s#cs1s#1
+m1#m2#1
+m2#par1e#1
+cs1s#m3#1
+m3#m4#1
+m4#m5#1
+m5#cs1e#1
+cs1e#par1e#1
+par1e#sde#1
+m3#m1#0

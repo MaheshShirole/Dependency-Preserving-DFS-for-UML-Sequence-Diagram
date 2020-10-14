@@ -1,0 +1,14 @@
+6#nodes#Dining Philosopher 2 # Concurrent Composite Graph (CCG) Khandai-2011
+sds#InitialNode#0
+sde#FinalNode#1
+fork1#ForkNode#3
+join1#JoinNode#4
+b1#block1 {ph1.thinking - CS1Start - ph1.takeFork(right) - ph1.takeFork(left) - ph1.eating() - ph1.putBackFork(right) - ph1.putBackFork(left)-CS1End}#2
+b2#block2 {ph2.thinking - CS2Start - ph2.takeFork(right) - ph2.takeFork(left) - ph2.eating() - ph2.putBackFork(right) - ph2.putBackFork(left)-CS2End}#2
+6#edges
+sds#fork1#1
+fork1#b1#1
+fork1#b2#1
+b1#join1#1
+b2#join1#1
+join1#sde#1

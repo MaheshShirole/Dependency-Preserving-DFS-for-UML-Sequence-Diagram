@@ -1,0 +1,14 @@
+6# nodes # Bank amount transfer scenario # Concurrent Composite Graph (CCG) Khandai-2011 
+sds#InitialNode#0
+sde#FinalNode#1
+fork1#ForkNode#3
+join1#JoinNode#4
+b1#block1{newtransfer() - transferAmmount(account2,200) - withdraw(200) - deposit(200)}#2
+b2#block2{newtransfer() - transferAmmount(account1,100) - withdraw(100) - deposit(100)}#2
+6#edges
+sds#fork1#1
+fork1#b1#1
+fork1#b2#1
+b1#join1#1
+b2#join1#1
+join1#sde#1
