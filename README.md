@@ -18,3 +18,14 @@ MCFG graph facilitates traversing of interleaving message sequences.
 In order to generate complete concurrenttest paths, a traversal algorithm should traverse an MCFG by preserving the total order in each interaction operand.
 It should also ensure to traverse a single side of a conditional flow in the selection interaction fragments such as alt and loop.  
 With above  restrictions,  we present  a modified  DFS  algorithm, which  we  call a dependency  preserving depth first search algorithm. 
+
+An MCFG is a rich form of control flow graph where nodes and edges have some extra information useful for testscenario generation algorithms.
+Definition: A message  control  flow  graphis  a  tuple G(V, E, n0, nf),  where V−a  set  of  nodes, E−a  set  ofedges, n0∈V −the initial node of graph, and nf ∈ V−the final node of graph.
+In MCFG, a node n ∈ V is represented as a tuple(l, nt),l is a label associated with node and nt is a type of node, and an edge e ∈ E is represented as a tuple(v1, v2, g, et); v1, v2∈V, g is a guard associated with the edge, and et is a type of the edge. 
+Nodes are broadly classified into two types:message nodes(MN) and control nodes(CN), i.e.,V= (MN∪CN). 
+Message nodes are associated with each message, and control nodes associated with each fragment and  combined fragment of the sequence  diagram. 
+Edges are classified as order-specification edges and message-interleaving edges. 
+Message interleaving edges are represented as dotted lines and order-specification edges are represented as dark lines in MCFG diagrams. 
+Message-interleaving edges represent virtual edges addedin the construction of MCFG for exploring message interleavings inside parallel fragments.
+
+An Example of MCFG for the bank transaction sequence diagram is shown in the file BankTransaction2_MCFG.pdf.
